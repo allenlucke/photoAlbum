@@ -18,7 +18,8 @@ public class PhotoAlbumService {
     @GetMapping("/getAlbumsMaster")
     public ResponseEntity getAlbums() throws JsonProcessingException {
 
-        ResponseEntity response = albumRetriever.getPhotosMaster();
+        String string = "3";
+        ResponseEntity response = albumRetriever.getPhotosMaster(string);
         return response;
     }
 }
