@@ -1,13 +1,12 @@
 package com.allen.photoAlbum;
 
-import com.allen.photoAlbum.Client.PhotoAlbumClient;
+import com.allen.photoAlbum.Logic.PhotoAlbumLogic;
 import org.apache.commons.cli.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -19,9 +18,7 @@ import org.springframework.context.annotation.Configuration;
 public class PhotoAlbumApplication implements CommandLineRunner {
 
 	@Autowired
-	private PhotoAlbumClient photoAlbumClient;
-
-	private ApplicationContext context;
+	private PhotoAlbumLogic photoAlbumLogic;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -43,7 +40,7 @@ public class PhotoAlbumApplication implements CommandLineRunner {
 			return;
 		}
 
-		this.photoAlbumClient.getPhotosMaster(line.getOptionValue("a"));
+		this.photoAlbumLogic.printPhotos(line.getOptionValue("a"));
 	}
 
 	public static void main(String[] args) {
