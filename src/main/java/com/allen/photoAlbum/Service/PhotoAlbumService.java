@@ -16,7 +16,7 @@ public class PhotoAlbumService {
 
     @CrossOrigin
     @GetMapping("/getAlbumsMaster")
-    public ResponseEntity getAlbums() throws JsonProcessingException {
+    public ResponseEntity getAlbums(){
 
         String string = "3";
         ResponseEntity response = albumRetriever.getPhotosMaster(string);

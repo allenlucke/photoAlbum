@@ -1,7 +1,6 @@
 package com.allen.photoAlbum.Client;
 
 import com.allen.photoAlbum.Model.Photo;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -14,7 +13,7 @@ import java.util.stream.Collectors;
 @Service
 public class PhotoAlbumClient {
 
-    public ResponseEntity getPhotosMaster(final String albumId ) throws JsonProcessingException {
+    public ResponseEntity getPhotosMaster(final String albumId ) {
         String param = checkForAlbumId(albumId);
         List photoList = new ArrayList<>();
         RestTemplate restTemplate = new RestTemplate();
